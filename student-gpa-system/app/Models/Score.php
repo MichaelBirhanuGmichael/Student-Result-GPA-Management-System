@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Score extends Model
 {
+    protected $fillable = ['student_id', 'course_id', 'score'];
+
     public function student()
     {
         return $this->belongsTo(Student::class);
