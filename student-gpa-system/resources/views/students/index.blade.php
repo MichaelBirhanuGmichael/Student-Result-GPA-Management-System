@@ -5,6 +5,10 @@
     <h2 class="text-2xl font-semibold mb-4">Student GPA List</h2>
 
     <form method="GET" action="{{ route('students.index') }}" class="mb-6">
+    <div class="mb-4 flex gap-4">
+        <a href="{{ route('students.export.excel', ['course_id' => request('course_id')]) }}" class="bg-green-600 text-white px-4 py-2 rounded">Export Excel</a>
+        <a href="{{ route('students.export.pdf', ['course_id' => request('course_id')]) }}" class="bg-red-600 text-white px-4 py-2 rounded">Export PDF</a>
+    </div>
         <div class="flex items-center gap-4">
             <label for="course_id" class="text-gray-700">Filter by Course:</label>
             <select name="course_id" id="course_id" class="border-gray-300 rounded" onchange="this.form.submit()">
