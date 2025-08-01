@@ -1,61 +1,64 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Student Result GPA Management System
 
-## About Laravel
+## Overview
+This is a Laravel-based web application for managing student results and GPA calculations. It provides an admin panel for CRUD operations, score entry, filtering, and exporting data.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features
+- **Student Management:** Add, edit, and delete students via Filament admin panel.
+- **Course Management:** Add, edit, and delete courses via Filament admin panel.
+- **Score Entry:** Assign scores to students for each course.
+- **GPA Calculation:** Automatically calculates GPA for each student based on their scores.
+- **Filtering:** Filter students by course on the GPA list page.
+- **Export:** Export student GPA data to Excel and PDF formats.
+- **Authentication:** Admin login using Laravel authentication and Sanctum.
+- **Admin Panel:** User-friendly admin interface powered by Filament.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Technologies Used
+- Laravel 12
+- Blade & Tailwind CSS
+- PostgreSQL
+- Filament (Admin Panel)
+- Laravel Excel (maatwebsite/excel)
+- DomPDF (barryvdh/laravel-dompdf)
+- Sanctum (API authentication)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## How to Use
+1. **Install dependencies:**
+   - `composer install`
+2. **Configure database:**
+   - Update `.env` with your PostgreSQL credentials.
+3. **Run migrations:**
+   - `php artisan migrate:fresh`
+4. **Create an admin user:**
+   - Use Filament admin panel or Laravel Tinker.
+5. **Access admin panel:**
+   - Visit `/adminPanel` and log in.
+6. **Add students and courses:**
+   - Use the admin panel for CRUD operations.
+7. **Enter scores:**
+   - Use the web form at `/scores/create`.
+8. **View GPA list:**
+   - Visit `/students` to see GPA calculations and export options.
 
-## Learning Laravel
+## Main Pages
+- `/adminPanel` — Filament admin panel for CRUD
+- `/students` — Student GPA list, filtering, export
+- `/scores/create` — Add scores for students
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Export
+- **Excel:** `/students/export/excel`
+- **PDF:** `/students/export/pdf`
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Notes
+- Ensure required PHP extensions are enabled: `intl`, `zip`, `pdo_pgsql`, `pgsql`.
+- Only students and courses added via the admin panel will appear in forms and lists.
+- Export features require the correct version of Laravel Excel and DomPDF.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Authors
+- Michael Birhanu Gmichael
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
+---
+For any issues, please open an issue or contact the maintainer.
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

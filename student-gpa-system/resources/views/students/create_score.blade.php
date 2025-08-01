@@ -17,7 +17,7 @@
             <label for="course_id" class="block text-gray-700">Course</label>
             <select name="course_id" id="course_id" class="mt-1 block w-full border-gray-300 rounded">
                 @foreach ($courses as $course)
-                    <option value="{{ $course->id }}">{{ $course->title }}</option>
+                    <option value="{{ $course->id }}">{{ $course->name }}</option>
                 @endforeach
             </select>
         </div>

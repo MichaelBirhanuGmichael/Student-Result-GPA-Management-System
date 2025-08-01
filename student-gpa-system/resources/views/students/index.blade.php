@@ -14,7 +14,7 @@
             <select name="course_id" id="course_id" class="border-gray-300 rounded" onchange="this.form.submit()">
                 <option value="">All Courses</option>
                 @foreach ($courses as $course)
-                    <option value="{{ $course->id }}" {{ (isset($courseId) && $courseId == $course->id) ? 'selected' : '' }}>{{ $course->title }}</option>
+                    <option value="{{ $course->id }}" {{ (isset($courseId) && $courseId == $course->id) ? 'selected' : '' }}>{{ $course->name }}</option>
                 @endforeach
             </select>
         </div>
