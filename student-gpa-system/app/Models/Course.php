@@ -10,4 +10,10 @@ class Course extends Model
     {
         return $this->hasMany(Score::class);
     }
+
+    protected $fillable = [
+        'name',
+        'code',
+        'description',
+    ];
 }
