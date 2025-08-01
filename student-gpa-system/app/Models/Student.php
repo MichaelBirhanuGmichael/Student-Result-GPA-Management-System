@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
 {
+    protected $fillable = [
+        'name',
+        'departement',
+    ];
+
     public function scores()
     {
         return $this->hasMany(Score::class);
